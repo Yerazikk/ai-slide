@@ -26,7 +26,7 @@ export function useLocalNotes() {
   );
 
   function addNote() {
-    const note: Note = { id: newId(), text: "New note\n", updatedAt: nowISO() };
+    const note: Note = { id: newId(), text: "", updatedAt: nowISO() };
     setDb((prev) => ({ ...prev, notes: [note, ...prev.notes] }));
     setActiveId(note.id);
   }

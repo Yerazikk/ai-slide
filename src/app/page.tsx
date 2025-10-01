@@ -70,88 +70,95 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#13131A] text-white">
-      {/* Top controls */}
-      <section className="sticky top-0 z-10 bg-[#13131A]/95 backdrop-blur border-b border-[#28282F]">
-        <div className="max-w-5xl mx-auto px-4 py-4">
-          <div className="mb-4">
-             <button
-               onClick={makeSlides}
-               disabled={creating || db.notes.length === 0}
-               className="w-full px-8 py-6 rounded-xl bg-gradient-to-br from-[#606065] to-[#28282F] text-white text-3xl font-bold hover:opacity-90 disabled:opacity-40 transition-opacity"
-             >
-              {creating ? "MUSE" : "MUSE"}
-            </button>
-          </div>
+    <main className="flex h-screen bg-[#13131A] text-white overflow-hidden">
+      {/* Left sidebar - Notes */}
+      <aside className="w-80 border-r border-[#28282F] flex flex-col">
+        {/* Sidebar header */}
+        <div className="p-4 border-b border-[#28282F] space-y-3">
+          <button
+            onClick={addNote}
+            className="w-full px-4 py-3 rounded-xl bg-[#28282F] text-white border border-[#606065] hover:bg-[#606065]/20 transition-colors text-2xl font-bold"
+            title="Add note"
+          >
+            +
+          </button>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={addNote}
-              className="px-4 py-3 rounded-xl bg-[#28282F] text-white border border-[#606065] hover:bg-[#606065]/20 transition-colors"
-              title="Add note"
-            >
-              Open Notebook
-            </button>
-
-            {/* Tiny premade import (optional) */}
-            <button
-              onClick={() => importPremade("muse_example")}
-              className="px-2 py-1 text-xs rounded bg-[#11131C] text-[#606065] border border-[#28282F] hover:text-[#AAB4E9] transition-colors"
-              title="import premade notes"
-            >
-              Import Example Notes
-            </button>
-          </div>
+          <button
+            onClick={() => importPremade("muse_example")}
+            className="w-full px-2 py-1.5 text-xs rounded bg-[#11131C] text-[#606065] border border-[#28282F] hover:text-[#AAB4E9] transition-colors"
+            title="import premade notes"
+          >
+            Import Example Notes
+          </button>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 pb-3">
-          {deckUrl ? (
-            <div className="flex items-center gap-2">
-               <a className="text-[#AAB4E9] underline text-2xl font-medium hover:text-[#AAB4E9]/80 transition-colors" href={deckUrl} target="_blank" rel="noreferrer">
-                 Open {projectTitle ? `"${projectTitle}"` : "your"} slides
-               </a>
-              {/* small, faint title echo */}
-              {!projectTitle ? null : (
-                <span className="text-xs text-[#606065]">(title detected by AI)</span>
-              )}
-            </div>
-          ) : (
-            <div className="text-[#606065]">
-              Muse builds while you sleep... {projectTitle ? ` — latest title: "${projectTitle}"` : ""}
-            </div>
-          )}
-          {error && <div className="text-red-400 mt-1">{error}</div>}
-        </div>
-      </section>
-
-      {/* Bottom: notes area */}
-      <section className="max-w-5xl mx-auto px-4 py-8">
-        {/* Active editor */}
-        {active && (
-          <div className="mb-6">
-            <ActiveNoteEditor
-              value={active.text}
-              onChange={updateActive}
-              onDelete={() => removeNote(active.id)}
-            />
-          </div>
-        )}
-
-        {/* Notes grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        {/* Scrollable notes list */}
+        <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {db.notes.map((n) => (
             <NoteCard
               key={n.id}
               text={n.text}
               active={n.id === activeId}
               onClick={() => setActiveId(n.id)}
+              onDelete={() => removeNote(n.id)}
             />
           ))}
           {db.notes.length === 0 && (
-            <div className="text-[#606065]">No notes yet. Click "add note".</div>
+            <div className="text-[#606065] text-sm">No notes yet. Click "Open Notebook".</div>
           )}
         </div>
-      </section>
+      </aside>
+
+      {/* Right side - Main content */}
+      <div className="flex-1 flex flex-col overflow-hidden relative">
+        {/* Top controls */}
+        <section className="border-b border-[#28282F] bg-[#13131A]">
+          <div className="px-6 py-4">
+            <div className="mb-4">
+              <button
+                onClick={makeSlides}
+                disabled={creating || db.notes.length === 0}
+                className="w-full text-center text-5xl font-bold bg-gradient-to-r from-[#AAB4E9] to-[#606065] bg-clip-text text-transparent hover:from-[#C5CDFF] hover:to-[#AAB4E9] disabled:opacity-40 transition-all cursor-pointer py-2"
+              >
+                {creating ? "MUSE" : "MUSE"}
+              </button>
+            </div>
+
+            <div className="space-y-2">
+              {deckUrl ? (
+                <div className="flex items-center gap-2">
+                  <a className="text-[#AAB4E9] underline text-2xl font-medium hover:text-[#AAB4E9]/80 transition-colors" href={deckUrl} target="_blank" rel="noreferrer">
+                    Open {projectTitle ? `"${projectTitle}"` : "your"} slides
+                  </a>
+                  {projectTitle && (
+                    <span className="text-xs text-[#606065]">(title detected by AI)</span>
+                  )}
+                </div>
+              ) : (
+                <div className="text-[#606065]">
+                  Muse builds while you sleep... {projectTitle ? ` — latest title: "${projectTitle}"` : ""}
+                </div>
+              )}
+              {error && <div className="text-red-400 mt-1">{error}</div>}
+            </div>
+          </div>
+        </section>
+
+        {/* Main editor area */}
+        <section className="flex-1 p-6 overflow-hidden">
+          {active ? (
+            <ActiveNoteEditor
+              value={active.text}
+              onChange={updateActive}
+              onDelete={() => removeNote(active.id)}
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full text-[#606065]">
+              Select a note from the sidebar to edit
+            </div>
+          )}
+        </section>
+      </div>
     </main>
   );
 }
