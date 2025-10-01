@@ -1,0 +1,35 @@
+{
+  "notes": [
+    {
+      "id": "nt_premade_muse_slide_1_title",
+      "text": "Muse\nBreathe life into your every thought.\nFun Fact:\nMuse Built this Slide Deck*\n*Muse built the v1 for the deck. We subsequently polished it and added images.",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "nt_premade_muse_slide_2_problem",
+      "text": "Problem: Notes are Thought Graves\nInspiration doesn’t wait.\nHumans have ~6,200 thoughts/day, many when we’re unprepared to record.\n72% report having ephemeral ideas (i.e., “shower thoughts”).\n<2% of thoughts are captured in any form (notes, Google/ChatGPT queries, etc.).\nRecorded ideas simply wither.\nNotes are rarely revisited; ~1% of saved content is used later.\nReviewing old notes is like “sifting through stale garbage.”\nImportant insights end up buried in unorganized heaps, never to be seen or used again.\nProductivity costs: the time tax.\nThe average employee wastes ~1.8 hrs per workday looking for info they’ve already seen.\nAs much as 50% of the workweek can be spent re-finding notes/files.\nThe Cost: ~$3,900 per employee per year. (lost time, duplicated work, missed opportunities)",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "nt_premade_muse_slide_3_sources",
+      "text": "Sources\n1 Queens, 2020; 2 Hansgrohe, 2015; 3 Guay, 2022; 4 Shipper, 2022; 5 McKinsey, 2012; 6 Gartner, 2013",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "nt_premade_muse_slide_4_how_it_works",
+      "text": "How it works\nContextual Understanding\nBeyond keyword search: Smart Surfacing.\nMuse understands the “why” behind both your query and your notes for augmented retrieval.\nAnalyzes each note in relation to each other, auto-connecting your knowledge base.",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "nt_premade_muse_slide_5_content_generation",
+      "text": "Content Generation\nProactively creates deliverables: folders of documents, YouTube playlists, slide decks (like this one!), flashcards, calendar events, etc.\nExpands half-formed thoughts into fuller concepts, synthesizes insights by merging related notes, and structures raw data into readable content.",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "nt_premade_muse_slide_6_solution",
+      "text": "Solution: Muse, a Thought Garden\nMuse is an extension of your mind.\nBeyond storage — it understands, connects, and works with your notes, transforming passive capture into proactive knowledge creation.\nMuse uses proprietary LLMs and user-specific embeddings to build a private, ever-evolving knowledge graph that gets smarter with every interaction.",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    }
+  ],
+  "version": 1
+}

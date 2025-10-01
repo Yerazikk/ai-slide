@@ -4,7 +4,7 @@ import open from "open"; // npm i open
 
 const SCOPES = [
   "https://www.googleapis.com/auth/presentations",
-  "https://www.googleapis.com/auth/drive.file",
+  "https://www.googleapis.com/auth/drive",
   "openid", "email", "profile",
 ];
 

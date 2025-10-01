@@ -1,0 +1,77 @@
+{
+  "title": "AI-Powered Slide Generation",
+  "slides": [
+    {
+      "layout": "TITLE",
+      "title": "AI-Powered Slide Generation",
+      "subtitle": "Transforming Notes into Dynamic Presentations"
+    },
+    {
+      "layout": "TWO_COLUMN",
+      "title": "Overview",
+      "columns": [
+        {
+          "heading": "Process",
+          "bullets": [
+            "Feed raw notes to AI",
+            "AI organizes into slides",
+            "Selects layouts automatically"
+          ]
+        },
+        {
+          "heading": "Output",
+          "bullets": [
+            "Styled deck with consistent fonts",
+            "Export options: PDF/PPTX",
+            "Regenerate slides if needed"
+          ]
+        }
+      ],
+      "footer": "2"
+    },
+    {
+      "layout": "ONE_COLUMN",
+      "title": "Key Features",
+      "columns": [
+        {
+          "heading": "Automation",
+          "bullets": [
+            "Auto-generate images",
+            "Utilize AI for charts",
+            "Balance control and randomness"
+          ]
+        }
+      ],
+      "footer": "3"
+    },
+    {
+      "layout": "TWO_COLUMN",
+      "title": "Technical Implementation",
+      "columns": [
+        {
+          "heading": "Setup",
+          "bullets": [
+            "Create Google Cloud project",
+            "Enable Slides and Drive API",
+            "Copy template deck for styling"
+          ]
+        },
+        {
+          "heading": "Development",
+          "bullets": [
+            "Script for layout ID fetching",
+            "Prototype with initial slides",
+            "Ensure clean spacing and fonts"
+          ]
+        }
+      ],
+      "footer": "4"
+    },
+    {
+      "layout": "TITLE_BODY",
+      "title": "Conclusion",
+      "body": "AI-driven slide generation enhances efficiency and consistency in presentations.",
+      "footer": "5"
+    }
+  ]
+}
