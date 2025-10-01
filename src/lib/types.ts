@@ -27,3 +27,17 @@ export interface PresentationStructure {
   title: string;      // Deck title
   slides: SlideData[];
 }
+
+// Outline structure from Prompt 1 (Plan & Clean)
+export interface PresentationOutline {
+  topic: string;           // Main topic/title
+  audience: string;        // Target audience
+  presentationType: string; // e.g., "pitch deck", "product demo", "educational"
+  sections: OutlineSection[];
+}
+
+export interface OutlineSection {
+  sectionTitle: string;    // Section name
+  intent: string;          // Purpose of this section
+  keyPoints: string[];     // Key points to cover
+}

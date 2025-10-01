@@ -1,0 +1,52 @@
+{
+  "topic": "Baking and Dessert Creation",
+  "audience": "Aspiring bakers and dessert enthusiasts",
+  "presentationType": "educational",
+  "sections": [
+    {
+      "sectionTitle": "Introduction to Baking",
+      "intent": "Introduce the joys and benefits of baking",
+      "keyPoints": [
+        "Baking as a rewarding hobby",
+        "The satisfaction of creating food",
+        "Overview of baking trends"
+      ]
+    },
+    {
+      "sectionTitle": "The Importance of Ingredients",
+      "intent": "Highlight key ingredients for successful baking",
+      "keyPoints": [
+        "Quality of ingredients matters",
+        "Understanding ingredient roles",
+        "Common ingredients used in baking"
+      ]
+    },
+    {
+      "sectionTitle": "Featured Recipe: Pumpkin Pie",
+      "intent": "Provide a detailed recipe for pumpkin pie",
+      "keyPoints": [
+        "List of required ingredients and equipment",
+        "Step-by-step baking process",
+        "Tips for perfecting the pie"
+      ]
+    },
+    {
+      "sectionTitle": "Creative Baking Ideas",
+      "intent": "Inspire with unique baking concepts",
+      "keyPoints": [
+        "Pop-up bakery concept",
+        "Innovative dessert ideas like Cookie Cakes",
+        "Exploring flavor combinations"
+      ]
+    },
+    {
+      "sectionTitle": "Conclusion and Next Steps",
+      "intent": "Encourage audience to start baking",
+      "keyPoints": [
+        "Recap of key takeaways",
+        "Encouragement to experiment in the kitchen",
+        "Resources for further learning"
+      ]
+    }
+  ]
+}

@@ -38,12 +38,17 @@ export default function Home() {
     setDeckUrl(null);
 
     try {
-      // 1) Send ALL notes to /api/generate (AI builds fill.json)
-      const genRes = await fetch("/api/generate", {
+      // 1) Prompt 1 - Plan & Clean: analyze notes and create outline
+      const planRes = await fetch("/api/plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ notes: db.notes })
       });
+      const plan = await planRes.json();
+      if (!planRes.ok || !plan.ok) throw new Error(plan.error || "Planning failed");
+
+      // 2) Prompt 2 - Generate Slides: convert outline to slides
+      const genRes = await fetch("/api/generate", { method: "POST" });
       const gen = await genRes.json();
       if (!genRes.ok || !gen.ok) throw new Error(gen.error || "AI generation failed");
 
@@ -51,7 +56,7 @@ export default function Home() {
       const titleFromAI: string = gen.preview?.title || "";
       if (titleFromAI) setAndPersistTitle(titleFromAI);
 
-      // 2) Create deck from fill.json
+      // 3) Create deck from presentation.json
       const fillRes = await fetch("/api/fill", { method: "POST" });
       const fill = await fillRes.json();
       if (!fillRes.ok || !fill.ok) throw new Error(fill.error || "Slides fill failed");

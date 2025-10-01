@@ -2,25 +2,23 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import fs from "fs/promises";
 import path from "path";
-import { PresentationStructure } from "../../../lib/types";
+import { PresentationStructure, PresentationOutline } from "../../../lib/types";
 
 export const runtime = "nodejs";
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 export async function POST(req: Request) {
-  const { notes } = await req.json(); // notes: array of {id, text}
+  try {
+    // Load outline from file (created by /api/plan)
+    const outlinePath = path.join(process.cwd(), "data", "outline.json");
+    const outlineData = await fs.readFile(outlinePath, "utf8");
+    const outline: PresentationOutline = JSON.parse(outlineData);
 
-  if (!notes || !Array.isArray(notes) || notes.length === 0) {
-    return NextResponse.json({ ok: false, error: "No notes provided" }, { status: 400 });
-  }
-
-  const allText = notes.map((n, i) => `Note ${i + 1}:\n${n.text}`).join("\n\n");
-
-  const instruction = `
+    const instruction = `
 You are a pitch-deck generator that creates dynamic slide presentations following a professional design system.
 
-Your task: Analyze the provided notes and decide how many slides are needed to effectively present the content. Choose appropriate slide types and layouts for each.
+You will receive a structured outline with sections and key points. Your task: Convert this outline into slides, choosing the best layout for each section.
 
 DESIGN SYSTEM & STYLING:
 COLORS:
@@ -99,59 +97,68 @@ OUTPUT FORMAT (JSON):
 }
 
 CONTENT RULES:
-- Decide the optimal number of slides based on content (typically 5-12 slides)
-- First slide should be "TITLE" layout
-- Choose layouts that best fit each section's content
+- First slide should be "TITLE" layout using outline.topic
+- Create 1-3 slides per section depending on content density
+- Choose layouts that best fit each section's content and key points
+- Use TITLE_BODY for impactful quotes or key statements
+- Use ONE_COLUMN for simple lists
+- Use TWO_COLUMN for comparisons, before/after, problem/solution
+- Use THREE_COLUMN for feature lists, three-part frameworks, benefits
 - Keep all text concise and punchy - this is a pitch deck, not a document
 - Use action-oriented language in bullets
 - Avoid redundancy across slides
 - Use empty arrays [] if no bullets needed for a column
 - Include sequential page numbers in footer field (starting at "2" for first body slide)
-- Final slide can be a closing statement or call-to-action
+- Total deck should be 8-15 slides
 
-SLIDE STRUCTURE SUGGESTIONS:
-- Slide 1: Title slide
-- Slide 2-3: Problem/opportunity
-- Slide 4-5: Solution/product
-- Slide 6-7: Market/traction
-- Slide 8-9: Business model/go-to-market
-- Slide 10+: Team/ask/closing (as needed)
+OUTLINE TO CONVERT:
+Topic: ${outline.topic}
+Audience: ${outline.audience}
+Type: ${outline.presentationType}
 
-Notes:
-"""${allText}"""
+Sections:
+${outline.sections.map((s, i) => `
+${i + 1}. ${s.sectionTitle}
+   Intent: ${s.intent}
+   Key Points:
+${s.keyPoints.map(p => `   - ${p}`).join('\n')}
+`).join('\n')}
 
 Return ONLY valid JSON. No markdown, no commentary.`;
 
-  const res = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    temperature: 0.2,
-    messages: [
-      { role: "system", content: "You are a JSON generator. Return only valid JSON, no markdown formatting." },
-      { role: "user", content: instruction }
-    ]
-  });
+    const res = await client.chat.completions.create({
+      model: "gpt-4o-mini",
+      temperature: 0.2,
+      messages: [
+        { role: "system", content: "You are a JSON generator. Return only valid JSON, no markdown formatting." },
+        { role: "user", content: instruction }
+      ]
+    });
 
-  let raw = res.choices[0].message?.content?.trim() || "{}";
-  if (raw.startsWith("```")) {
-    raw = raw.replace(/^```(json)?/i, "").replace(/```$/, "").trim();
+    let raw = res.choices[0].message?.content?.trim() || "{}";
+    if (raw.startsWith("```")) {
+      raw = raw.replace(/^```(json)?/i, "").replace(/```$/, "").trim();
+    }
+
+    let structure: PresentationStructure;
+    try {
+      structure = JSON.parse(raw);
+    } catch {
+      return NextResponse.json({ ok: false, error: "Invalid JSON from AI" }, { status: 500 });
+    }
+
+    // Validate structure
+    if (!structure.title || !Array.isArray(structure.slides) || structure.slides.length === 0) {
+      return NextResponse.json({ ok: false, error: "Invalid presentation structure" }, { status: 500 });
+    }
+
+    // Save to file
+    const filePath = path.join(process.cwd(), "data", "presentation.json");
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(structure, null, 2), "utf8");
+
+    return NextResponse.json({ ok: true, preview: structure });
+  } catch (e: any) {
+    return NextResponse.json({ ok: false, error: e?.message || "unknown" }, { status: 500 });
   }
-
-  let structure: PresentationStructure;
-  try {
-    structure = JSON.parse(raw);
-  } catch {
-    return NextResponse.json({ ok: false, error: "Invalid JSON from AI" }, { status: 500 });
-  }
-
-  // Validate structure
-  if (!structure.title || !Array.isArray(structure.slides) || structure.slides.length === 0) {
-    return NextResponse.json({ ok: false, error: "Invalid presentation structure" }, { status: 500 });
-  }
-
-  // Save to file
-  const filePath = path.join(process.cwd(), "data", "presentation.json");
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(structure, null, 2), "utf8");
-
-  return NextResponse.json({ ok: true, preview: structure });
 }

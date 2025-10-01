@@ -375,7 +375,7 @@ async function createTitleBodySlide(
     const slideWidth = 720;
     const quoteWidth = slideWidth - (THEME.margin.side * 2);
     const quoteX = THEME.margin.side;
-    const quoteY = 150; // Vertically centered area
+    const quoteY = 200; // Vertically centered area
 
     requests.push(
       {
@@ -411,7 +411,7 @@ async function createTitleBodySlide(
             fontSize: { magnitude: 36, unit: "PT" },
             foregroundColor: { opaqueColor: { rgbColor: textColor } },
             fontFamily: THEME.font,
-            bold: false,
+            bold: true,
           },
           fields: "fontSize,foregroundColor,fontFamily,bold",
         },
@@ -467,7 +467,7 @@ async function createTitleBodySlide(
           objectId: pageNumberId,
           style: {
             fontSize: { magnitude: 8, unit: "PT" },
-            foregroundColor: { opaqueColor: { rgbColor: hexToRgb(THEME.accent) } },
+            foregroundColor: { opaqueColor: { rgbColor: hexToRgb(THEME.text) } },
             fontFamily: THEME.font,
           },
           fields: "fontSize,foregroundColor,fontFamily",
@@ -753,7 +753,7 @@ async function createColumnSlide(
           objectId: pageNumberId,
           style: {
             fontSize: { magnitude: 8, unit: "PT" },
-            foregroundColor: { opaqueColor: { rgbColor: hexToRgb(THEME.accent) } },
+            foregroundColor: { opaqueColor: { rgbColor: hexToRgb(THEME.text) } },
             fontFamily: THEME.font,
           },
           fields: "fontSize,foregroundColor,fontFamily",
