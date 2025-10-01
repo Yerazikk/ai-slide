@@ -1,29 +1,29 @@
 {
-  "title": "AI-Powered Slide Generation",
+  "title": "Baking Dreams",
   "slides": [
     {
       "layout": "TITLE",
-      "title": "AI-Powered Slide Generation",
-      "subtitle": "Transforming Notes into Dynamic Presentations"
+      "title": "Baking Dreams",
+      "subtitle": "Turning Passion into Pastries"
     },
     {
       "layout": "TWO_COLUMN",
-      "title": "Overview",
+      "title": "The Heart of the Matter",
       "columns": [
         {
-          "heading": "Process",
+          "heading": "The Problem",
           "bullets": [
-            "Feed raw notes to AI",
-            "AI organizes into slides",
-            "Selects layouts automatically"
+            "Driver suffers heart attack",
+            "Crashes into cardiologist's office",
+            "Need for quick medical response"
           ]
         },
         {
-          "heading": "Output",
+          "heading": "The Opportunity",
           "bullets": [
-            "Styled deck with consistent fonts",
-            "Export options: PDF/PPTX",
-            "Regenerate slides if needed"
+            "Create a comforting bakery",
+            "Serve delicious treats",
+            "Bring joy through food"
           ]
         }
       ],
@@ -31,14 +31,14 @@
     },
     {
       "layout": "ONE_COLUMN",
-      "title": "Key Features",
+      "title": "Our Solution",
       "columns": [
         {
-          "heading": "Automation",
+          "heading": "Mane Food",
           "bullets": [
-            "Auto-generate images",
-            "Utilize AI for charts",
-            "Balance control and randomness"
+            "Pop-up bakery experience",
+            "Cool desserts and surprise bites",
+            "Cookie cakes and tiramisu"
           ]
         }
       ],
@@ -46,32 +46,81 @@
     },
     {
       "layout": "TWO_COLUMN",
-      "title": "Technical Implementation",
+      "title": "The Dream Team",
       "columns": [
         {
-          "heading": "Setup",
+          "heading": "Team Members",
           "bullets": [
-            "Create Google Cloud project",
-            "Enable Slides and Drive API",
-            "Copy template deck for styling"
+            "Me - Visionary",
+            "Yerazik - Chef",
+            "Luna - Food Taster"
           ]
         },
         {
-          "heading": "Development",
+          "heading": "Support Roles",
           "bullets": [
-            "Script for layout ID fetching",
-            "Prototype with initial slides",
-            "Ensure clean spacing and fonts"
+            "Shlep - Rat Chaser",
+            "Collaborative spirit",
+            "Passion for baking"
           ]
         }
       ],
       "footer": "4"
     },
     {
-      "layout": "TITLE_BODY",
-      "title": "Conclusion",
-      "body": "AI-driven slide generation enhances efficiency and consistency in presentations.",
+      "layout": "ONE_COLUMN",
+      "title": "Baking Passion",
+      "columns": [
+        {
+          "heading": "Why Baking?",
+          "bullets": [
+            "Cooking as a fulfilling hobby",
+            "Creating food brings happiness",
+            "Desire to explore baking more"
+          ]
+        }
+      ],
       "footer": "5"
+    },
+    {
+      "layout": "TITLE_BODY",
+      "title": "Pumpkin Pie Recipe",
+      "body": "A delicious recipe to showcase baking skills and creativity."
+    },
+    {
+      "layout": "ONE_COLUMN",
+      "title": "Ingredients",
+      "columns": [
+        {
+          "heading": "Key Ingredients",
+          "bullets": [
+            "Flaky All-Butter Pie Dough",
+            "Pumpkin puree",
+            "Spices: cinnamon, ginger, nutmeg"
+          ]
+        }
+      ],
+      "footer": "6"
+    },
+    {
+      "layout": "ONE_COLUMN",
+      "title": "Baking Steps",
+      "columns": [
+        {
+          "heading": "Process Overview",
+          "bullets": [
+            "Preheat oven to 325°F",
+            "Brown the butter",
+            "Mix filling and bake"
+          ]
+        }
+      ],
+      "footer": "7"
+    },
+    {
+      "layout": "TITLE_BODY",
+      "title": "Call to Action",
+      "body": "Join us in our baking journey and experience the joy of delicious treats!"
     }
   ]
 }
