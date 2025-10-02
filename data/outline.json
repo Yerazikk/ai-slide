@@ -1,51 +1,51 @@
 {
-  "topic": "Baking and Dessert Creation",
-  "audience": "Aspiring bakers and dessert enthusiasts",
-  "presentationType": "educational",
+  "topic": "Muse",
+  "audience": "Individuals and organizations seeking to enhance productivity and knowledge management",
+  "presentationType": "pitch deck",
   "sections": [
     {
-      "sectionTitle": "Introduction to Baking",
-      "intent": "Introduce the joys and benefits of baking",
+      "sectionTitle": "Introduction",
+      "intent": "Hook the audience and establish context",
       "keyPoints": [
-        "Baking as a rewarding hobby",
-        "The satisfaction of creating food",
-        "Overview of baking trends"
+        "Introduce Muse as a revolutionary tool for thought management",
+        "Highlight the importance of capturing and utilizing ideas effectively",
+        "Mention the inspiration behind the product and its development"
       ]
     },
     {
-      "sectionTitle": "The Importance of Ingredients",
-      "intent": "Highlight key ingredients for successful baking",
+      "sectionTitle": "Problem",
+      "intent": "Describe the problem or opportunity",
       "keyPoints": [
-        "Quality of ingredients matters",
-        "Understanding ingredient roles",
-        "Common ingredients used in baking"
+        "Humans have ~6,200 thoughts/day, with many unrecorded",
+        "72% of people experience ephemeral ideas that go uncaptured",
+        "The average employee wastes ~1.8 hours/day searching for information they've seen before"
       ]
     },
     {
-      "sectionTitle": "Featured Recipe: Pumpkin Pie",
-      "intent": "Provide a detailed recipe for pumpkin pie",
+      "sectionTitle": "Solution",
+      "intent": "Present Muse as the solution to the identified problem",
       "keyPoints": [
-        "List of required ingredients and equipment",
-        "Step-by-step baking process",
-        "Tips for perfecting the pie"
+        "Muse acts as a Thought Garden, transforming passive note-taking into proactive knowledge creation",
+        "Utilizes proprietary LLMs and user-specific embeddings for enhanced understanding",
+        "Creates deliverables and synthesizes insights from notes"
       ]
     },
     {
-      "sectionTitle": "Creative Baking Ideas",
-      "intent": "Inspire with unique baking concepts",
+      "sectionTitle": "How It Works",
+      "intent": "Explain the functionality of Muse",
       "keyPoints": [
-        "Pop-up bakery concept",
-        "Innovative dessert ideas like Cookie Cakes",
-        "Exploring flavor combinations"
+        "Smart Surfacing: understands the context behind queries and notes",
+        "Analyzes notes in relation to each other for better retrieval",
+        "Proactively generates content like documents, playlists, and flashcards"
       ]
     },
     {
-      "sectionTitle": "Conclusion and Next Steps",
-      "intent": "Encourage audience to start baking",
+      "sectionTitle": "Market Opportunity",
+      "intent": "Highlight the potential market for Muse",
       "keyPoints": [
-        "Recap of key takeaways",
-        "Encouragement to experiment in the kitchen",
-        "Resources for further learning"
+        "Growing demand for productivity tools in both personal and professional settings",
+        "Significant costs associated with lost productivity due to poor note management",
+        "Opportunity to capture a share of the knowledge management market"
       ]
     }
   ]

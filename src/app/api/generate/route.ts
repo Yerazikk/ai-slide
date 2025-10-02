@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
-export async function POST(req: Request) {
+export async function POST() {
   try {
     // Load outline from file (created by /api/plan)
     const outlinePath = path.join(process.cwd(), "data", "outline.json");
@@ -45,7 +45,7 @@ DESIGN PRINCIPLES:
 
 AVAILABLE SLIDE TYPES & LAYOUTS:
 1. "TITLE" - Title slide
-   - title: Project name (should be bold and impactful, 3-8 words)
+   - title: Product or pitch name ONLY (1-4 words max, just the name, no descriptive words)
    - subtitle: Tagline/positioning statement (concise, 5-12 words, should convey value proposition)
 
 2. "TITLE_BODY" - Quote slide
@@ -158,7 +158,8 @@ Return ONLY valid JSON. No markdown, no commentary.`;
     await fs.writeFile(filePath, JSON.stringify(structure, null, 2), "utf8");
 
     return NextResponse.json({ ok: true, preview: structure });
-  } catch (e: any) {
-    return NextResponse.json({ ok: false, error: e?.message || "unknown" }, { status: 500 });
+  } catch (e) {
+    const error = e instanceof Error ? e.message : "unknown";
+    return NextResponse.json({ ok: false, error }, { status: 500 });
   }
 }

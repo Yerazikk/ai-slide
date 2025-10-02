@@ -5,7 +5,8 @@ export async function GET() {
   try {
     const data = await inspectTemplate();
     return NextResponse.json({ ok: true, data });
-  } catch (e: any) {
-    return NextResponse.json({ ok: false, error: e?.message || "unknown" }, { status: 500 });
+  } catch (e) {
+    const error = e instanceof Error ? e.message : "unknown";
+    return NextResponse.json({ ok: false, error }, { status: 500 });
   }
 }

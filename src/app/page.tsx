@@ -14,7 +14,7 @@ export default function Home() {
     addNote, updateActive, removeNote, importPremade
   } = useLocalNotes();
 
-  const { accessToken, user, isLoading, isSignedIn, signIn, signOut } = useGoogleAuth();
+  const { accessToken, isLoading, isSignedIn, signIn } = useGoogleAuth();
 
   const [creating, setCreating] = useState(false);
   const [deckUrl, setDeckUrl] = useState<string | null>(null);
@@ -84,8 +84,8 @@ export default function Home() {
       if (!fillRes.ok || !fill.ok) throw new Error(fill.error || "Slides fill failed");
 
       setDeckUrl(fill.url);
-    } catch (e: any) {
-      setError(e?.message || "Something went wrong");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setCreating(false);
     }
@@ -100,7 +100,7 @@ export default function Home() {
             MUSE
           </h1>
           <p className="text-[#606065] mb-8">
-            Transform your notes into beautiful presentations with AI
+            Must use use-muse account
           </p>
           <button
             onClick={signIn}
@@ -118,21 +118,14 @@ export default function Home() {
       {/* Left sidebar - Notes */}
       <aside className="w-80 border-r border-[#28282F] flex flex-col">
         {/* Sidebar header */}
-        <div className="p-4 border-b border-[#28282F] space-y-3">
-          {isSignedIn && user && (
-            <div className="flex items-center gap-2 mb-2 pb-2 border-b border-[#28282F]">
-              <img src={user.picture} alt={user.name} className="w-8 h-8 rounded-full" />
-              <div className="flex-1 min-w-0">
-                <div className="text-xs text-white truncate">{user.name}</div>
-                <button
-                  onClick={signOut}
-                  className="text-xs text-[#606065] hover:text-[#AAB4E9] transition-colors"
-                >
-                  Sign out
-                </button>
-              </div>
-            </div>
-          )}
+        <div className="p-4 pt-8 border-b border-[#28282F] space-y-3">
+          <button
+            onClick={() => importPremade("muse_example")}
+            className="w-full px-2 py-1.5 text-xs rounded bg-[#11131C] text-[#606065] border border-[#28282F] hover:text-[#AAB4E9] transition-colors"
+            title="import premade notes"
+          >
+            Import Example Notes
+          </button>
 
           <button
             onClick={addNote}
@@ -140,14 +133,6 @@ export default function Home() {
             title="Add note"
           >
             +
-          </button>
-
-          <button
-            onClick={() => importPremade("muse_example")}
-            className="w-full px-2 py-1.5 text-xs rounded bg-[#11131C] text-[#606065] border border-[#28282F] hover:text-[#AAB4E9] transition-colors"
-            title="import premade notes"
-          >
-            Import Example Notes
           </button>
         </div>
 
@@ -163,7 +148,7 @@ export default function Home() {
             />
           ))}
           {db.notes.length === 0 && (
-            <div className="text-[#606065] text-sm">No notes yet. Click "Open Notebook".</div>
+            <div className="text-[#606065] text-sm">No notes yet. Click &ldquo;Open Notebook&rdquo;.</div>
           )}
         </div>
       </aside>
@@ -172,14 +157,17 @@ export default function Home() {
       <div className="flex-1 flex flex-col overflow-hidden relative">
         {/* Top controls */}
         <section className="border-b border-[#28282F] bg-[#13131A]">
-          <div className="px-6 py-4">
+          <div className="px-6 py-4 pt-8">
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-[#AAB4E9] to-[#606065] bg-clip-text text-transparent mb-6 text-center">
+              MUSE
+            </h1>
             <div className="mb-4">
               <button
                 onClick={makeSlides}
                 disabled={creating || db.notes.length === 0}
-                className="w-full text-center text-5xl font-bold bg-gradient-to-r from-[#AAB4E9] to-[#606065] bg-clip-text text-transparent hover:from-[#C5CDFF] hover:to-[#AAB4E9] disabled:opacity-40 transition-all cursor-pointer py-2"
+                className="px-6 py-2 rounded-lg bg-transparent text-sm font-semibold transition-colors border-2 border-[#AAB4E9] text-[#AAB4E9] hover:bg-[#AAB4E9]/10 disabled:opacity-40"
               >
-                {creating ? "MUSE" : isSignedIn ? "MUSE" : "Sign in to MUSE"}
+                {creating ? "Creating..." : isSignedIn ? "Create Slides" : "Sign in to Create Slides"}
               </button>
             </div>
 
@@ -187,15 +175,12 @@ export default function Home() {
               {deckUrl ? (
                 <div className="flex items-center gap-2">
                   <a className="text-[#AAB4E9] underline text-2xl font-medium hover:text-[#AAB4E9]/80 transition-colors" href={deckUrl} target="_blank" rel="noreferrer">
-                    Open {projectTitle ? `"${projectTitle}"` : "your"} slides
+                    Open {projectTitle ? `&ldquo;${projectTitle}&rdquo;` : "your"} slides
                   </a>
-                  {projectTitle && (
-                    <span className="text-xs text-[#606065]">(title detected by AI)</span>
-                  )}
                 </div>
               ) : (
                 <div className="text-[#606065]">
-                  Muse builds while you sleep... {projectTitle ? ` — latest title: "${projectTitle}"` : ""}
+                  Slide link shows up here!
                 </div>
               )}
               {error && <div className="text-red-400 mt-1">{error}</div>}

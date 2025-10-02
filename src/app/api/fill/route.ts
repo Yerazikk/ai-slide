@@ -22,7 +22,8 @@ export async function POST(req: NextRequest) {
     const deck = await buildPresentation(slides, structure.title, structure.slides);
 
     return NextResponse.json({ ok: true, ...deck });
-  } catch (e: any) {
-    return NextResponse.json({ ok: false, error: e?.message || "unknown" }, { status: 500 });
+  } catch (e) {
+    const error = e instanceof Error ? e.message : "unknown";
+    return NextResponse.json({ ok: false, error }, { status: 500 });
   }
 }

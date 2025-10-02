@@ -1,126 +1,101 @@
 {
-  "title": "Baking Dreams",
+  "title": "Muse",
   "slides": [
     {
       "layout": "TITLE",
-      "title": "Baking Dreams",
-      "subtitle": "Turning Passion into Pastries"
+      "title": "Muse",
+      "subtitle": "Revolutionizing Thought Management"
     },
     {
-      "layout": "TWO_COLUMN",
-      "title": "The Heart of the Matter",
+      "layout": "ONE_COLUMN",
+      "title": "Introduction",
       "columns": [
         {
-          "heading": "The Problem",
+          "heading": "",
           "bullets": [
-            "Driver suffers heart attack",
-            "Crashes into cardiologist's office",
-            "Need for quick medical response"
-          ]
-        },
-        {
-          "heading": "The Opportunity",
-          "bullets": [
-            "Create a comforting bakery",
-            "Serve delicious treats",
-            "Bring joy through food"
+            "Introduce Muse as a revolutionary tool",
+            "Capture and utilize ideas effectively",
+            "Inspired by the need for better thought management"
           ]
         }
       ],
       "footer": "2"
     },
     {
-      "layout": "ONE_COLUMN",
-      "title": "Our Solution",
+      "layout": "TWO_COLUMN",
+      "title": "The Problem",
       "columns": [
         {
-          "heading": "Mane Food",
+          "heading": "Thought Overload",
           "bullets": [
-            "Pop-up bakery experience",
-            "Cool desserts and surprise bites",
-            "Cookie cakes and tiramisu"
+            "Humans have ~6,200 thoughts/day",
+            "Many thoughts go unrecorded",
+            "72% experience ephemeral ideas"
+          ]
+        },
+        {
+          "heading": "Productivity Loss",
+          "bullets": [
+            "Average employee wastes ~1.8 hours/day",
+            "Searching for previously seen information",
+            ""
           ]
         }
       ],
       "footer": "3"
     },
     {
-      "layout": "TWO_COLUMN",
-      "title": "The Dream Team",
+      "layout": "ONE_COLUMN",
+      "title": "The Solution",
       "columns": [
         {
-          "heading": "Team Members",
+          "heading": "",
           "bullets": [
-            "Me - Visionary",
-            "Yerazik - Chef",
-            "Luna - Food Taster"
-          ]
-        },
-        {
-          "heading": "Support Roles",
-          "bullets": [
-            "Shlep - Rat Chaser",
-            "Collaborative spirit",
-            "Passion for baking"
+            "Muse as a Thought Garden",
+            "Transforms note-taking into knowledge creation",
+            "Utilizes proprietary LLMs for enhanced understanding"
           ]
         }
       ],
       "footer": "4"
     },
     {
-      "layout": "ONE_COLUMN",
-      "title": "Baking Passion",
+      "layout": "TWO_COLUMN",
+      "title": "How It Works",
       "columns": [
         {
-          "heading": "Why Baking?",
+          "heading": "Smart Surfacing",
           "bullets": [
-            "Cooking as a fulfilling hobby",
-            "Creating food brings happiness",
-            "Desire to explore baking more"
+            "Understands context behind queries",
+            "Analyzes notes for better retrieval",
+            ""
+          ]
+        },
+        {
+          "heading": "Proactive Content Generation",
+          "bullets": [
+            "Creates documents, playlists, flashcards",
+            "Synthesizes insights from notes",
+            ""
           ]
         }
       ],
       "footer": "5"
     },
     {
-      "layout": "TITLE_BODY",
-      "title": "Pumpkin Pie Recipe",
-      "body": "A delicious recipe to showcase baking skills and creativity."
-    },
-    {
       "layout": "ONE_COLUMN",
-      "title": "Ingredients",
+      "title": "Market Opportunity",
       "columns": [
         {
-          "heading": "Key Ingredients",
+          "heading": "",
           "bullets": [
-            "Flaky All-Butter Pie Dough",
-            "Pumpkin puree",
-            "Spices: cinnamon, ginger, nutmeg"
+            "Growing demand for productivity tools",
+            "Costs associated with poor note management",
+            "Opportunity in knowledge management market"
           ]
         }
       ],
       "footer": "6"
-    },
-    {
-      "layout": "ONE_COLUMN",
-      "title": "Baking Steps",
-      "columns": [
-        {
-          "heading": "Process Overview",
-          "bullets": [
-            "Preheat oven to 325°F",
-            "Brown the butter",
-            "Mix filling and bake"
-          ]
-        }
-      ],
-      "footer": "7"
-    },
-    {
-      "layout": "TITLE_BODY",
-      "title": "Call to Action",
-      "body": "Join us in our baking journey and experience the joy of delicious treats!"
     }
   ]
 }

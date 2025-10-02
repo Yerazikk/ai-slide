@@ -1,4 +1,4 @@
-import { google } from "googleapis";
+// import { google } from "googleapis";
 import type { slides_v1 } from "googleapis";
 import { SlideData, Column } from "./types";
 import fs from "fs";
@@ -106,8 +106,9 @@ export async function buildPresentation(
 }
 
 /**
- * Upload background image and get its URL
+ * Upload background image and get its URL (currently unused)
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function uploadBackgroundImage(
   slidesApi: slides_v1.Slides,
   presentationId: string
@@ -239,7 +240,7 @@ async function createTitleSlide(
   const slideId = `slide_${index}`;
 
   // Create slide with TITLE layout
-  const createRes = await slidesApi.presentations.batchUpdate({
+  await slidesApi.presentations.batchUpdate({
     presentationId,
     requestBody: {
       requests: [

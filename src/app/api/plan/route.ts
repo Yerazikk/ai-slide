@@ -41,7 +41,7 @@ STEP 3:
 - If there is not enough information for a section of the outline from the context, leave it out
 OUTPUT FORMAT (JSON):
 {
-  "topic": "Main presentation topic/title",
+  "topic": "Product or pitch name ONLY (1-4 words max, just the name)",
   "audience": "Target audience description",
   "presentationType": "pitch deck | product demo | educational | business proposal | etc.",
   "sections": [

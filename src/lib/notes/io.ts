@@ -10,18 +10,21 @@ export function parseFile(text: string): NotesDB {
   if (!parsed || !Array.isArray(parsed.notes)) {
     throw new Error("Invalid JSON: expected { notes: [] }");
   }
-  const notes: Note[] = parsed.notes.map((n: any) => ({
-    id:
-      typeof n.id === "string" && n.id.length
-        ? n.id
-        : (globalThis.crypto?.randomUUID?.() ??
-           "nt_" + Math.random().toString(36).slice(2, 10)),
-    text: typeof n.text === "string" ? n.text : "",
-    updatedAt:
-      typeof n.updatedAt === "string" && !Number.isNaN(Date.parse(n.updatedAt))
-        ? n.updatedAt
-        : new Date().toISOString(),
-  }));
+  const notes: Note[] = parsed.notes.map((n: unknown) => {
+    const note = n as Record<string, unknown>;
+    return {
+      id:
+        typeof note.id === "string" && note.id.length
+          ? note.id
+          : (globalThis.crypto?.randomUUID?.() ??
+             "nt_" + Math.random().toString(36).slice(2, 10)),
+      text: typeof note.text === "string" ? note.text : "",
+      updatedAt:
+        typeof note.updatedAt === "string" && !Number.isNaN(Date.parse(note.updatedAt))
+          ? note.updatedAt
+          : new Date().toISOString(),
+    };
+  });
   return { notes, version: 1 };
 }
 

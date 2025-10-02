@@ -40,9 +40,10 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json(tokens);
-  } catch (error: any) {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown";
     return NextResponse.json(
-      { error: "Token exchange failed", message: error?.message },
+      { error: "Token exchange failed", message },
       { status: 500 }
     );
   }
