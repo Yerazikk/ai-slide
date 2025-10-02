@@ -4,7 +4,7 @@
     {
       "layout": "TITLE",
       "title": "Muse",
-      "subtitle": "Revolutionizing Thought Management"
+      "subtitle": "Empowering Thought Capture and Utilization"
     },
     {
       "layout": "ONE_COLUMN",
@@ -13,9 +13,9 @@
         {
           "heading": "",
           "bullets": [
-            "Introduce Muse as a revolutionary tool",
-            "Capture and utilize ideas effectively",
-            "Inspired by the need for better thought management"
+            "Empowers users to capture thoughts effectively.",
+            "Outlines transformative potential of Muse.",
+            "Unique approach in knowledge management."
           ]
         }
       ],
@@ -23,22 +23,22 @@
     },
     {
       "layout": "TWO_COLUMN",
-      "title": "The Problem",
+      "title": "Problem",
       "columns": [
         {
-          "heading": "Thought Overload",
+          "heading": "Current Challenges",
           "bullets": [
-            "Humans have ~6,200 thoughts/day",
-            "Many thoughts go unrecorded",
-            "72% experience ephemeral ideas"
+            "72% experience unrecorded ideas.",
+            "Less than 2% of thoughts captured.",
+            "Significant time wasted searching for info."
           ]
         },
         {
-          "heading": "Productivity Loss",
+          "heading": "Opportunity",
           "bullets": [
-            "Average employee wastes ~1.8 hours/day",
-            "Searching for previously seen information",
-            ""
+            "Address lost insights.",
+            "Enhance productivity.",
+            "Streamline information retrieval."
           ]
         }
       ],
@@ -46,56 +46,102 @@
     },
     {
       "layout": "ONE_COLUMN",
-      "title": "The Solution",
+      "title": "Solution",
       "columns": [
         {
           "heading": "",
           "bullets": [
-            "Muse as a Thought Garden",
-            "Transforms note-taking into knowledge creation",
-            "Utilizes proprietary LLMs for enhanced understanding"
+            "Muse as a 'Thought Garden'.",
+            "Transforms note-taking into knowledge creation.",
+            "Utilizes proprietary LLMs for knowledge graph."
           ]
         }
       ],
       "footer": "4"
     },
     {
-      "layout": "TWO_COLUMN",
+      "layout": "THREE_COLUMN",
       "title": "How It Works",
       "columns": [
         {
           "heading": "Smart Surfacing",
           "bullets": [
-            "Understands context behind queries",
-            "Analyzes notes for better retrieval",
-            ""
+            "Augmented retrieval beyond keywords.",
+            "Enhances user experience.",
+            "Increases efficiency."
           ]
         },
         {
-          "heading": "Proactive Content Generation",
+          "heading": "Proactive Generation",
           "bullets": [
-            "Creates documents, playlists, flashcards",
-            "Synthesizes insights from notes",
-            ""
+            "Generates deliverables from inputs.",
+            "Saves time for users.",
+            "Boosts productivity."
+          ]
+        },
+        {
+          "heading": "Contextual Understanding",
+          "bullets": [
+            "Enhances relevance of notes.",
+            "Improves information retrieval.",
+            "Supports user decision-making."
           ]
         }
       ],
       "footer": "5"
     },
     {
-      "layout": "ONE_COLUMN",
-      "title": "Market Opportunity",
+      "layout": "TWO_COLUMN",
+      "title": "Business Model",
       "columns": [
         {
-          "heading": "",
+          "heading": "Revenue Strategy",
           "bullets": [
-            "Growing demand for productivity tools",
-            "Costs associated with poor note management",
-            "Opportunity in knowledge management market"
+            "Freemium SaaS model.",
+            "Free tier and pro tier options.",
+            "Ad revenue from free tier."
+          ]
+        },
+        {
+          "heading": "Pro Tier Benefits",
+          "bullets": [
+            "Advanced AI generation.",
+            "Integrations with other tools.",
+            "Enhanced user experience."
           ]
         }
       ],
       "footer": "6"
+    },
+    {
+      "layout": "ONE_COLUMN",
+      "title": "Competitive Landscape",
+      "columns": [
+        {
+          "heading": "",
+          "bullets": [
+            "First mover in knowledge empowerment.",
+            "No onboarding friction.",
+            "World's first proactive AI for knowledge."
+          ]
+        }
+      ],
+      "footer": "7"
+    },
+    {
+      "layout": "ONE_COLUMN",
+      "title": "Financing Sought",
+      "columns": [
+        {
+          "heading": "",
+          "bullets": [
+            "$1.5M pre-seed funding needed.",
+            "Expand engineering resources.",
+            "Long-term vision for human cognition OS."
+          ]
+        }
+      ],
+      "footer": "8"
     }
   ]
 }

@@ -1,6 +1,11 @@
 {
   "notes": [
     {
+      "id": "nt_premade_muse_slide_0_title",
+      "text": "I need to buy milk and eggs for pumpkin pie",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
       "id": "nt_premade_muse_slide_1_title",
       "text": "Muse\nBreathe life into your every thought.\nFun Fact:\nMuse Built this Slide Deck*\n*Muse built the v1 for the deck. We subsequently polished it and added images.",
       "updatedAt": "2099-01-01T00:00:00.000Z"
@@ -12,7 +17,12 @@
     },
     {
       "id": "nt_premade_muse_slide_3_sources",
-      "text": "Sources\n1 Queens, 2020; 2 Hansgrohe, 2015; 3 Guay, 2022; 4 Shipper, 2022; 5 McKinsey, 2012; 6 Gartner, 2013",
+      "text": "Muse frees users from the burden of managing their own thoughts, liberating them to become creators by serving as a flywheel of inspiration - your inputs serve as its catalyst, which it will use to proactively create valuable deliverables for you. Features: Nonboarding – No onboarding; the app is intuitive enough to pick up and play instantly | Frictionless Input – Opening the app allows for instant text or voice capture | Reasoning-Empowered Recall – Search for your notes via natural language, not just keywords | MuseGPT – ChatGPT, but with all of your thoughts as context for hyper-personalized responses | Ever-Musing – Muse relentlessly and proactively thinks on your behalf, constantly asking itself “given my understanding of my user, what is the most meaningful deliverable I can build for them?",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+     {
+      "id": "nt_premade_muse_slide_3_sources",
+      "text": "Listen to more podcasts on the drive home instead of music",
       "updatedAt": "2099-01-01T00:00:00.000Z"
     },
     {
@@ -28,6 +38,11 @@
     {
       "id": "nt_premade_muse_slide_6_solution",
       "text": "Solution: Muse, a Thought Garden\nMuse is an extension of your mind.\nBeyond storage — it understands, connects, and works with your notes, transforming passive capture into proactive knowledge creation.\nMuse uses proprietary LLMs and user-specific embeddings to build a private, ever-evolving knowledge graph that gets smarter with every interaction.",
+      "updatedAt": "2099-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "nt_premade_muse_slide_7_solution",
+      "text": "Muse frees users from the burden of managing their own thoughts, liberating them to become creators by serving as a flywheel of inspiration - your inputs serve as its catalyst, which it will use to proactively create valuable deliverables for you. Features: Nonboarding – No onboarding; the app is intuitive enough to pick up and play instantly | Frictionless Input – Opening the app allows for instant text or voice capture | Reasoning-Empowered Recall – Search for your notes via natural language, not just keywords | MuseGPT – ChatGPT, but with all of your thoughts as context for hyper-personalized responses | Ever-Musing – Muse relentlessly and proactively thinks on your behalf, constantly asking itself “given my understanding of my user, what is the most meaningful deliverable I can build for them?”",
       "updatedAt": "2099-01-01T00:00:00.000Z"
     }
   ],
