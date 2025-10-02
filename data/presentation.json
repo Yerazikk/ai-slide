@@ -4,7 +4,7 @@
     {
       "layout": "TITLE",
       "title": "Muse",
-      "subtitle": "Empowering Thought Capture and Utilization"
+      "subtitle": "Revolutionizing Thought Management"
     },
     {
       "layout": "ONE_COLUMN",
@@ -13,9 +13,9 @@
         {
           "heading": "",
           "bullets": [
-            "Empowers users to capture thoughts effectively.",
-            "Outlines transformative potential of Muse.",
-            "Unique approach in knowledge management."
+            "Revolutionary tool for thought management",
+            "Capture and utilize thoughts effectively",
+            "Solution to common productivity challenges"
           ]
         }
       ],
@@ -26,19 +26,17 @@
       "title": "Problem",
       "columns": [
         {
-          "heading": "Current Challenges",
+          "heading": "Challenges",
           "bullets": [
-            "72% experience unrecorded ideas.",
-            "Less than 2% of thoughts captured.",
-            "Significant time wasted searching for info."
+            "Unorganized notes lead to lost insights",
+            "72% of ideas go uncaptured"
           ]
         },
         {
-          "heading": "Opportunity",
+          "heading": "Costs",
           "bullets": [
-            "Address lost insights.",
-            "Enhance productivity.",
-            "Streamline information retrieval."
+            "Significant productivity costs",
+            "Time wasted searching for information"
           ]
         }
       ],
@@ -51,9 +49,9 @@
         {
           "heading": "",
           "bullets": [
-            "Muse as a 'Thought Garden'.",
-            "Transforms note-taking into knowledge creation.",
-            "Utilizes proprietary LLMs for knowledge graph."
+            "Muse as a Thought Garden",
+            "Transforms note-taking into knowledge creation",
+            "Personalized knowledge graph with LLMs"
           ]
         }
       ],
@@ -66,26 +64,20 @@
         {
           "heading": "Smart Surfacing",
           "bullets": [
-            "Augmented retrieval beyond keywords.",
-            "Enhances user experience.",
-            "Increases efficiency."
+            "Contextual understanding of notes",
+            "Proactive content generation"
           ]
         },
         {
-          "heading": "Proactive Generation",
+          "heading": "Augmented Retrieval",
           "bullets": [
-            "Generates deliverables from inputs.",
-            "Saves time for users.",
-            "Boosts productivity."
+            "Analyzes notes in relation to each other",
+            "Creates deliverables from inputs"
           ]
         },
         {
-          "heading": "Contextual Understanding",
-          "bullets": [
-            "Enhances relevance of notes.",
-            "Improves information retrieval.",
-            "Supports user decision-making."
-          ]
+          "heading": "",
+          "bullets": []
         }
       ],
       "footer": "5"
@@ -95,19 +87,17 @@
       "title": "Business Model",
       "columns": [
         {
-          "heading": "Revenue Strategy",
+          "heading": "Revenue Generation",
           "bullets": [
-            "Freemium SaaS model.",
-            "Free tier and pro tier options.",
-            "Ad revenue from free tier."
+            "Subscription-based model",
+            "Freemium model for initial users"
           ]
         },
         {
-          "heading": "Pro Tier Benefits",
+          "heading": "Partnerships",
           "bullets": [
-            "Advanced AI generation.",
-            "Integrations with other tools.",
-            "Enhanced user experience."
+            "Collaborations with productivity tools",
+            "Enhance product offerings"
           ]
         }
       ],
@@ -115,33 +105,75 @@
     },
     {
       "layout": "ONE_COLUMN",
-      "title": "Competitive Landscape",
+      "title": "Traction",
       "columns": [
         {
           "heading": "",
           "bullets": [
-            "First mover in knowledge empowerment.",
-            "No onboarding friction.",
-            "World's first proactive AI for knowledge."
+            "High satisfaction from initial users",
+            "Beta testing shows improved productivity",
+            "Growing community sharing experiences"
           ]
         }
       ],
       "footer": "7"
     },
     {
-      "layout": "ONE_COLUMN",
-      "title": "Financing Sought",
+      "layout": "TWO_COLUMN",
+      "title": "Go-to-Market Strategy",
       "columns": [
         {
-          "heading": "",
+          "heading": "Marketing",
           "bullets": [
-            "$1.5M pre-seed funding needed.",
-            "Expand engineering resources.",
-            "Long-term vision for human cognition OS."
+            "Targeted campaigns for productivity enthusiasts",
+            "Leverage social media for awareness"
+          ]
+        },
+        {
+          "heading": "Partnerships",
+          "bullets": [
+            "Collaborate with influencers",
+            "Engage in content marketing"
           ]
         }
       ],
       "footer": "8"
+    },
+    {
+      "layout": "ONE_COLUMN",
+      "title": "Team",
+      "columns": [
+        {
+          "heading": "",
+          "bullets": [
+            "Founders with AI and productivity expertise",
+            "Advisory board of industry leaders",
+            "Commitment to user feedback integration"
+          ]
+        }
+      ],
+      "footer": "9"
+    },
+    {
+      "layout": "TWO_COLUMN",
+      "title": "The Ask",
+      "columns": [
+        {
+          "heading": "Investment",
+          "bullets": [
+            "Support product development",
+            "Enhance marketing efforts"
+          ]
+        },
+        {
+          "heading": "Partnerships",
+          "bullets": [
+            "Strategic collaborations",
+            "Requesting audience feedback"
+          ]
+        }
+      ],
+      "footer": "10"
     }
   ]
 }

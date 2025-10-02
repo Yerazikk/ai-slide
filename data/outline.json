@@ -1,69 +1,87 @@
 {
   "topic": "Muse",
-  "audience": "Investors and potential partners in technology and productivity solutions",
+  "audience": "Individuals and professionals seeking to enhance productivity and creativity through better note management",
   "presentationType": "pitch deck",
   "sections": [
     {
       "sectionTitle": "Introduction",
       "intent": "Hook the audience and establish context",
       "keyPoints": [
-        "Muse empowers users to capture and utilize their thoughts effectively.",
-        "The presentation outlines the transformative potential of Muse.",
-        "Highlight the unique approach of Muse in knowledge management."
+        "Introduction to Muse as a revolutionary tool for thought management",
+        "Highlight the importance of capturing and utilizing thoughts effectively",
+        "Present the concept of Muse as a solution to common productivity challenges"
       ]
     },
     {
       "sectionTitle": "Problem",
       "intent": "Describe the problem or opportunity",
       "keyPoints": [
-        "72% of people experience ephemeral ideas that go unrecorded.",
-        "Less than 2% of thoughts are captured, leading to lost insights.",
-        "Employees waste significant time searching for previously seen information."
+        "Notes are often unorganized and underutilized, leading to lost insights",
+        "72% of people have fleeting ideas that go uncaptured",
+        "Significant productivity costs associated with searching for lost information"
       ]
     },
     {
       "sectionTitle": "Solution",
-      "intent": "Present Muse as the innovative solution to the problem",
+      "intent": "Present Muse as the innovative solution",
       "keyPoints": [
-        "Muse acts as a 'Thought Garden' that understands and connects notes.",
-        "Transforms passive note-taking into proactive knowledge creation.",
-        "Utilizes proprietary LLMs to build a personalized knowledge graph."
+        "Muse acts as a Thought Garden, transforming passive note-taking into proactive knowledge creation",
+        "Utilizes proprietary LLMs to build a personalized knowledge graph",
+        "Features include frictionless input, reasoning-empowered recall, and proactive content generation"
       ]
     },
     {
       "sectionTitle": "How It Works",
       "intent": "Explain the functionality of Muse",
       "keyPoints": [
-        "Smart Surfacing for augmented retrieval beyond keyword search.",
-        "Proactively generates deliverables from user inputs.",
-        "Contextual understanding enhances the relevance of retrieved notes."
+        "Contextual understanding through smart surfacing of notes",
+        "Proactive content generation, creating deliverables from user inputs",
+        "Augmented retrieval by analyzing notes in relation to each other"
       ]
     },
     {
       "sectionTitle": "Business Model",
-      "intent": "Outline the revenue generation strategy",
+      "intent": "Outline how Muse will generate revenue",
       "keyPoints": [
-        "Freemium SaaS model with a free tier and a pro tier.",
-        "Pro tier includes advanced AI generation and integrations.",
-        "Ad revenue from the free tier without disrupting user experience."
+        "Subscription-based model for individual and enterprise users",
+        "Potential partnerships with productivity tools and platforms",
+        "Freemium model to attract initial users with premium features available"
       ]
     },
     {
-      "sectionTitle": "Competitive Landscape",
-      "intent": "Highlight Muse's unique advantages over competitors",
+      "sectionTitle": "Traction",
+      "intent": "Show evidence of interest or early success",
       "keyPoints": [
-        "First mover in the knowledge empowerment space.",
-        "No onboarding friction, enhancing user retention.",
-        "World's first proactive AI designed for knowledge management."
+        "Initial user feedback indicating high satisfaction and engagement",
+        "Beta testing results showing improved productivity metrics",
+        "Growing community of users sharing their experiences and use cases"
       ]
     },
     {
-      "sectionTitle": "Financing Sought",
-      "intent": "Detail funding requirements and future vision",
+      "sectionTitle": "Go-to-Market Strategy",
+      "intent": "Detail the plan for launching Muse",
       "keyPoints": [
-        "$1.5M pre-seed funding to expand engineering resources.",
-        "Launch MVP with multi-platform support.",
-        "Long-term vision to become the operating system for human cognition."
+        "Targeted marketing campaigns focusing on productivity enthusiasts",
+        "Leverage social media and content marketing to build awareness",
+        "Partnerships with influencers in the productivity and tech space"
+      ]
+    },
+    {
+      "sectionTitle": "Team",
+      "intent": "Introduce the founding team and their expertise",
+      "keyPoints": [
+        "Founders with backgrounds in AI, productivity, and user experience design",
+        "Advisory board consisting of industry experts and thought leaders",
+        "Commitment to continuous improvement and user feedback integration"
+      ]
+    },
+    {
+      "sectionTitle": "The Ask",
+      "intent": "Clearly state what is being requested from the audience",
+      "keyPoints": [
+        "Seeking investment to support product development and marketing efforts",
+        "Looking for strategic partnerships to enhance product offerings",
+        "Requesting feedback and support from the audience to refine the product"
       ]
     }
   ]

@@ -71,7 +71,8 @@ GUIDELINES:
 - Remove redundancy and noise from the notes
 - Focus on creating a compelling narrative flow
 - Each section should build toward the presentation's goal
-- 
+- - Total deck should be 8-15 slides however if there is not enough content nu,ber of slides can be shortened
+
 
 Notes:
 """${allText}"""

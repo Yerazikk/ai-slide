@@ -111,9 +111,7 @@ CONTENT RULES:
 - Keep all text concise and punchy - this is a pitch deck, not a document
 - Use action-oriented language in bullets
 - Avoid redundancy across slides
-- Use empty arrays [] if no bullets needed for a column
 - Include sequential page numbers in footer field (starting at "2" for first body slide)
-- Total deck should be 8-15 slides however if there is not enough content it can be shorter
 
 OUTLINE TO CONVERT:
 Topic: ${outline.topic}
