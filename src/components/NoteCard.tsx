@@ -10,6 +10,9 @@ export default function NoteCard({
   const displayTitle = title || "New note";
   const isPlaceholder = !title;
 
+  // Only show hover expansion if there's enough content to warrant it
+  const hasExpandableContent = body && body.length > 50;
+
   return (
     <div
       className="relative"
@@ -24,14 +27,14 @@ export default function NoteCard({
           ${active
             ? "border-[#AAB4E9] bg-gradient-to-br from-[#0B1018] to-[#111826] ring-2 ring-[#AAB4E9]/30"
             : "border-[#28282F] bg-[#21292D] hover:bg-[#28282F] hover:border-[#606065]"}
-          ${isHovered ? "relative z-50" : ""}
+          ${isHovered && hasExpandableContent ? "invisible" : ""}
         `}
       >
-        <div className={`font-semibold text-sm mb-1 break-words transition-all ${isHovered ? "line-clamp-none" : "line-clamp-2"} ${isPlaceholder ? "text-[#606065] italic" : "text-white"}`}>
+        <div className={`font-semibold text-sm mb-1 break-words transition-all ${isHovered && hasExpandableContent ? "line-clamp-none" : "line-clamp-2"} ${isPlaceholder ? "text-[#606065] italic" : "text-white"}`}>
           {displayTitle}
         </div>
         {body ? (
-          <div className={`text-xs text-white/60 whitespace-pre-wrap break-words transition-all ${isHovered ? "line-clamp-none" : "line-clamp-2"}`}>
+          <div className={`text-xs text-white/60 whitespace-pre-wrap break-words transition-all ${isHovered && hasExpandableContent ? "line-clamp-none" : "line-clamp-2"}`}>
             {body}
           </div>
         ) : (
@@ -40,7 +43,7 @@ export default function NoteCard({
       </button>
 
       {/* Expanded overlay on hover */}
-      {isHovered && (
+      {isHovered && hasExpandableContent && (
         <div
           onClick={onClick}
           className="absolute left-0 right-0 top-0 z-50 p-3 rounded-lg border shadow-2xl
