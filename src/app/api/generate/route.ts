@@ -13,6 +13,11 @@ export async function POST() {
     // Load outline from file (created by /api/plan)
     const outlinePath = path.join(process.cwd(), "data", "outline.json");
     const outlineData = await fs.readFile(outlinePath, "utf8");
+
+    if (!outlineData || outlineData.trim() === "") {
+      return NextResponse.json({ ok: false, error: "Outline file is empty. Please run planning first." }, { status: 400 });
+    }
+
     const outline: PresentationOutline = JSON.parse(outlineData);
 
     const instruction = `
@@ -98,18 +103,17 @@ OUTPUT FORMAT (JSON):
 
 CONTENT RULES:
 - First slide should be "TITLE" layout using outline.topic
-- Create 1-3 slides per section depending on content density
 - Choose layouts that best fit each section's content and key points
-- Use TITLE_BODY for impactful quotes or key statements
-- Use ONE_COLUMN for simple lists
-- Use TWO_COLUMN for comparisons, before/after, problem/solution
-- Use THREE_COLUMN for feature lists, three-part frameworks, benefits
+- Use TITLE_BODY for impactful quotes or key statements pick at least one for a hook slide or call to action
+- Use ONE_COLUMN for simple lists, 
+- Use TWO_COLUMN for comparisons, before/after, problem/solution, or when two columns are only needed
+- Use THREE_COLUMN for feature lists, three-part frameworks, benefits, more text, more words
 - Keep all text concise and punchy - this is a pitch deck, not a document
 - Use action-oriented language in bullets
 - Avoid redundancy across slides
 - Use empty arrays [] if no bullets needed for a column
 - Include sequential page numbers in footer field (starting at "2" for first body slide)
-- Total deck should be 8-15 slides
+- Total deck should be 8-15 slides however if there is not enough content it can be shorter
 
 OUTLINE TO CONVERT:
 Topic: ${outline.topic}
@@ -143,7 +147,9 @@ Return ONLY valid JSON. No markdown, no commentary.`;
     let structure: PresentationStructure;
     try {
       structure = JSON.parse(raw);
-    } catch {
+    } catch (parseError) {
+      console.error("JSON parse error:", parseError);
+      console.error("Raw AI response:", raw);
       return NextResponse.json({ ok: false, error: "Invalid JSON from AI" }, { status: 500 });
     }
 

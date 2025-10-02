@@ -16,6 +16,11 @@ export async function POST(req: NextRequest) {
     // Load presentation structure from file
     const structurePath = path.join(process.cwd(), "data", "presentation.json");
     const structureData = await fs.readFile(structurePath, "utf8");
+
+    if (!structureData || structureData.trim() === "") {
+      return NextResponse.json({ ok: false, error: "Presentation file is empty. Please generate slides first." }, { status: 400 });
+    }
+
     const structure: PresentationStructure = JSON.parse(structureData);
 
     // Build presentation

@@ -175,7 +175,7 @@ export default function Home() {
               {deckUrl ? (
                 <div className="flex items-center gap-2">
                   <a className="text-[#AAB4E9] underline text-2xl font-medium hover:text-[#AAB4E9]/80 transition-colors" href={deckUrl} target="_blank" rel="noreferrer">
-                    Open {projectTitle ? `&ldquo;${projectTitle}&rdquo;` : "your"} slides
+                    Open {projectTitle ? `"${projectTitle}"` : "your"} slides
                   </a>
                 </div>
               ) : (

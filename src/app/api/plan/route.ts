@@ -27,14 +27,14 @@ STEP 1: ANALYZE & FILTER
 - Determine the target audience
 
 STEP 2: CREATE OUTLINE
-- Organize information into logical sections (typically 4-8 sections)
+- Create a outline for a good pitch deck presentation
+Sections of a good picth deck include: Title/Introduction, Problem, Solution, Market Opportunity, Product Demo/How It Works, Business Model, Traction, Go-to-Market Strategy, Competitive Landscape, Team, Financials/Projections, and The Ask.
+  * Do not include all sections if its clear there is not enough information. 
 - For each section, define:
   * Section title (clear, concise)
   * Intent (what this section should accomplish)
   * Key points (3-5 main points to cover)
-  * Sections of a good picth deck include: Title/Introduction, Problem, Solution, Market Opportunity, Product Demo/How It Works, Business Model, Traction, Go-to-Market Strategy, Competitive Landscape, Team, Financials/Projections, and The Ask.
-  * Do not include all sections if there is not enough information. 
-  
+  * 
 STEP 3: 
 - Fill the outline with strategic, relevant content from the notes
 - ensure a compelling narrative flow that builds toward the presentation's goal
