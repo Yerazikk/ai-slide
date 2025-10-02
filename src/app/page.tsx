@@ -206,6 +206,7 @@ export default function Home() {
         <section className="flex-1 p-6 overflow-hidden">
           {active ? (
             <ActiveNoteEditor
+              noteId={active.id}
               value={active.text}
               onChange={updateActive}
               onDelete={() => removeNote(active.id)}

@@ -2,24 +2,31 @@
 import { useEffect, useRef } from "react";
 
 export default function ActiveNoteEditor({
-  value, onChange, onDelete
-}: { value: string; onChange: (v: string) => void; onDelete: () => void }) {
+  value, onChange, onDelete, noteId
+}: { value: string; onChange: (v: string) => void; onDelete: () => void; noteId: string }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const titleRef = useRef<HTMLInputElement>(null);
+  const hasInitializedRef = useRef(false);
 
   const lines = value.split('\n');
   const title = lines[0] || '';
   const body = lines.slice(1).join('\n');
 
   useEffect(() => {
-    if (titleRef.current) {
-      titleRef.current.focus();
-      titleRef.current.setSelectionRange(
-        titleRef.current.value.length,
-        titleRef.current.value.length
-      );
+    hasInitializedRef.current = false;
+  }, [noteId]);
+
+  useEffect(() => {
+    if (!hasInitializedRef.current) {
+      hasInitializedRef.current = true;
+
+      if (title) {
+        textareaRef.current?.focus();
+      } else {
+        titleRef.current?.focus();
+      }
     }
-  }, [value]);
+  }, [noteId, title]);
 
   function handleTitleChange(newTitle: string) {
     onChange(newTitle + '\n' + body);
