@@ -1,9 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
-import fs from "node:fs/promises";
-import path from "node:path";
 import { getGoogleClients } from "../../../lib/google";
 import { buildPresentation } from "../../../lib/slideBuilder";
-import { PresentationStructure } from "../../../lib/types";
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,15 +10,12 @@ export async function POST(req: NextRequest) {
 
     const { slides } = getGoogleClients(userToken);
 
-    // Load presentation structure from file
-    const structurePath = path.join(process.cwd(), "data", "presentation.json");
-    const structureData = await fs.readFile(structurePath, "utf8");
+    // Get presentation structure from request body
+    const { structure } = await req.json();
 
-    if (!structureData || structureData.trim() === "") {
-      return NextResponse.json({ ok: false, error: "Presentation file is empty. Please generate slides first." }, { status: 400 });
+    if (!structure || !structure.title || !Array.isArray(structure.slides)) {
+      return NextResponse.json({ ok: false, error: "Invalid presentation structure provided" }, { status: 400 });
     }
-
-    const structure: PresentationStructure = JSON.parse(structureData);
 
     // Build presentation
     const deck = await buildPresentation(slides, structure.title, structure.slides);

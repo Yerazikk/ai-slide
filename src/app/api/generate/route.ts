@@ -2,23 +2,19 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import fs from "fs/promises";
 import path from "path";
-import { PresentationStructure, PresentationOutline } from "../../../lib/types";
+import { PresentationStructure } from "../../../lib/types";
 
 export const runtime = "nodejs";
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
-export async function POST() {
+export async function POST(req: Request) {
   try {
-    // Load outline from file (created by /api/plan)
-    const outlinePath = path.join(process.cwd(), "data", "outline.json");
-    const outlineData = await fs.readFile(outlinePath, "utf8");
+    const { outline } = await req.json(); // outline: PresentationOutline from /api/plan
 
-    if (!outlineData || outlineData.trim() === "") {
-      return NextResponse.json({ ok: false, error: "Outline file is empty. Please run planning first." }, { status: 400 });
+    if (!outline || !outline.topic || !Array.isArray(outline.sections)) {
+      return NextResponse.json({ ok: false, error: "Invalid outline provided" }, { status: 400 });
     }
-
-    const outline: PresentationOutline = JSON.parse(outlineData);
 
     const instruction = `
 You are a pitch-deck generator that creates dynamic slide presentations following a professional design system.
@@ -119,11 +115,11 @@ Audience: ${outline.audience}
 Type: ${outline.presentationType}
 
 Sections:
-${outline.sections.map((s, i) => `
+${outline.sections.map((s: {sectionTitle: string; intent: string; keyPoints: string[]}, i: number) => `
 ${i + 1}. ${s.sectionTitle}
    Intent: ${s.intent}
    Key Points:
-${s.keyPoints.map(p => `   - ${p}`).join('\n')}
+${s.keyPoints.map((p: string) => `   - ${p}`).join('\n')}
 `).join('\n')}
 
 Return ONLY valid JSON. No markdown, no commentary.`;
@@ -156,10 +152,14 @@ Return ONLY valid JSON. No markdown, no commentary.`;
       return NextResponse.json({ ok: false, error: "Invalid presentation structure" }, { status: 500 });
     }
 
-    // Save to file
-    const filePath = path.join(process.cwd(), "data", "presentation.json");
-    await fs.mkdir(path.dirname(filePath), { recursive: true });
-    await fs.writeFile(filePath, JSON.stringify(structure, null, 2), "utf8");
+    // Try to save to file (for local dev), but don't fail if it doesn't work (Vercel)
+    try {
+      const filePath = path.join(process.cwd(), "data", "presentation.json");
+      await fs.mkdir(path.dirname(filePath), { recursive: true });
+      await fs.writeFile(filePath, JSON.stringify(structure, null, 2), "utf8");
+    } catch (fileError) {
+      console.warn("Could not save presentation to file (running on serverless?):", fileError);
+    }
 
     return NextResponse.json({ ok: true, preview: structure });
   } catch (e) {

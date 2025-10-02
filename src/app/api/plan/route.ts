@@ -110,10 +110,14 @@ Return ONLY valid JSON. No markdown, no commentary.`;
     return NextResponse.json({ ok: false, error: "Invalid outline structure" }, { status: 500 });
   }
 
-    // Save outline to file
-    const filePath = path.join(process.cwd(), "data", "outline.json");
-    await fs.mkdir(path.dirname(filePath), { recursive: true });
-    await fs.writeFile(filePath, JSON.stringify(outline, null, 2), "utf8");
+    // Try to save outline to file (for local dev), but don't fail if it doesn't work (Vercel)
+    try {
+      const filePath = path.join(process.cwd(), "data", "outline.json");
+      await fs.mkdir(path.dirname(filePath), { recursive: true });
+      await fs.writeFile(filePath, JSON.stringify(outline, null, 2), "utf8");
+    } catch (fileError) {
+      console.warn("Could not save outline to file (running on serverless?):", fileError);
+    }
 
     return NextResponse.json({ ok: true, outline });
   } catch (error) {

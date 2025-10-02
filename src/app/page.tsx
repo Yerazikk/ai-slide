@@ -71,6 +71,7 @@ export default function Home() {
       const genRes = await fetch("/api/generate", {
         method: "POST",
         headers,
+        body: JSON.stringify({ outline: plan.outline })
       });
       if (!genRes.ok) {
         const errorText = await genRes.text();
@@ -83,10 +84,11 @@ export default function Home() {
       const titleFromAI: string = gen.preview?.title || "";
       if (titleFromAI) setAndPersistTitle(titleFromAI);
 
-      // 3) Create deck from presentation.json
+      // 3) Create deck from presentation structure
       const fillRes = await fetch("/api/fill", {
         method: "POST",
         headers,
+        body: JSON.stringify({ structure: gen.preview })
       });
       if (!fillRes.ok) {
         const errorText = await fillRes.text();
