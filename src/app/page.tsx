@@ -60,16 +60,24 @@ export default function Home() {
         headers,
         body: JSON.stringify({ notes: db.notes })
       });
+      if (!planRes.ok) {
+        const errorText = await planRes.text();
+        throw new Error(`Planning failed: ${errorText || planRes.statusText}`);
+      }
       const plan = await planRes.json();
-      if (!planRes.ok || !plan.ok) throw new Error(plan.error || "Planning failed");
+      if (!plan.ok) throw new Error(plan.error || "Planning failed");
 
       // 2) Prompt 2 - Generate Slides: convert outline to slides
       const genRes = await fetch("/api/generate", {
         method: "POST",
         headers,
       });
+      if (!genRes.ok) {
+        const errorText = await genRes.text();
+        throw new Error(`AI generation failed: ${errorText || genRes.statusText}`);
+      }
       const gen = await genRes.json();
-      if (!genRes.ok || !gen.ok) throw new Error(gen.error || "AI generation failed");
+      if (!gen.ok) throw new Error(gen.error || "AI generation failed");
 
       // Pull the title from the AI preview and save it
       const titleFromAI: string = gen.preview?.title || "";
@@ -80,8 +88,12 @@ export default function Home() {
         method: "POST",
         headers,
       });
+      if (!fillRes.ok) {
+        const errorText = await fillRes.text();
+        throw new Error(`Slides fill failed: ${errorText || fillRes.statusText}`);
+      }
       const fill = await fillRes.json();
-      if (!fillRes.ok || !fill.ok) throw new Error(fill.error || "Slides fill failed");
+      if (!fill.ok) throw new Error(fill.error || "Slides fill failed");
 
       setDeckUrl(fill.url);
     } catch (e) {

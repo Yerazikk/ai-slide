@@ -9,13 +9,18 @@ export const runtime = "nodejs";
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 export async function POST(req: Request) {
-  const { notes } = await req.json(); // notes: array of {id, text}
+  try {
+    if (!process.env.OPENAI_API_KEY) {
+      return NextResponse.json({ ok: false, error: "OpenAI API key not configured" }, { status: 500 });
+    }
 
-  if (!notes || !Array.isArray(notes) || notes.length === 0) {
-    return NextResponse.json({ ok: false, error: "No notes provided" }, { status: 400 });
-  }
+    const { notes } = await req.json(); // notes: array of {id, text}
 
-  const allText = notes.map((n, i) => `Note ${i + 1}:\n${n.text}`).join("\n\n");
+    if (!notes || !Array.isArray(notes) || notes.length === 0) {
+      return NextResponse.json({ ok: false, error: "No notes provided" }, { status: 400 });
+    }
+
+    const allText = notes.map((n, i) => `Note ${i + 1}:\n${n.text}`).join("\n\n");
 
   const instruction = `
 You are a pitch deck presentation strategist. Your task is to analyze raw notes and create a clean, structured outline for a presentation pitch deck.
@@ -105,10 +110,17 @@ Return ONLY valid JSON. No markdown, no commentary.`;
     return NextResponse.json({ ok: false, error: "Invalid outline structure" }, { status: 500 });
   }
 
-  // Save outline to file
-  const filePath = path.join(process.cwd(), "data", "outline.json");
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(outline, null, 2), "utf8");
+    // Save outline to file
+    const filePath = path.join(process.cwd(), "data", "outline.json");
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(outline, null, 2), "utf8");
 
-  return NextResponse.json({ ok: true, outline });
+    return NextResponse.json({ ok: true, outline });
+  } catch (error) {
+    console.error("Plan API error:", error);
+    return NextResponse.json({
+      ok: false,
+      error: error instanceof Error ? error.message : "Failed to generate outline"
+    }, { status: 500 });
+  }
 }

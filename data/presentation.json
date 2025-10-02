@@ -4,7 +4,7 @@
     {
       "layout": "TITLE",
       "title": "Muse",
-      "subtitle": "Revolutionizing Thought Management"
+      "subtitle": "Transforming note management and productivity"
     },
     {
       "layout": "ONE_COLUMN",
@@ -13,9 +13,9 @@
         {
           "heading": "",
           "bullets": [
-            "Revolutionary tool for thought management",
-            "Capture and utilize thoughts effectively",
-            "Solution to common productivity challenges"
+            "Breathe life into your every thought.",
+            "Muse built the v1 for the deck.",
+            "Overview of the presentation's purpose."
           ]
         }
       ],
@@ -26,78 +26,88 @@
       "title": "Problem",
       "columns": [
         {
-          "heading": "Challenges",
+          "heading": "Current Challenges",
           "bullets": [
-            "Unorganized notes lead to lost insights",
-            "72% of ideas go uncaptured"
+            "Notes are often unorganized.",
+            "72% of people have uncaptured ideas.",
+            "Average employee wastes ~1.8 hours daily."
           ]
         },
         {
-          "heading": "Costs",
+          "heading": "Opportunity",
           "bullets": [
-            "Significant productivity costs",
-            "Time wasted searching for information"
+            "Need for effective note management.",
+            "Increase productivity and idea retention.",
+            "Streamline information retrieval."
           ]
         }
       ],
       "footer": "3"
     },
     {
-      "layout": "ONE_COLUMN",
+      "layout": "THREE_COLUMN",
       "title": "Solution",
       "columns": [
         {
-          "heading": "",
+          "heading": "Muse's Approach",
           "bullets": [
-            "Muse as a Thought Garden",
-            "Transforms note-taking into knowledge creation",
-            "Personalized knowledge graph with LLMs"
+            "Transforms passive capture into proactive creation.",
+            "Utilizes proprietary LLMs.",
+            "Builds a private knowledge graph."
+          ]
+        },
+        {
+          "heading": "Key Features",
+          "bullets": [
+            "Frictionless input.",
+            "Reasoning-empowered recall.",
+            "Smart surfacing of content."
+          ]
+        },
+        {
+          "heading": "User Benefits",
+          "bullets": [
+            "Enhanced idea organization.",
+            "Improved productivity.",
+            "Seamless knowledge integration."
           ]
         }
       ],
       "footer": "4"
     },
     {
-      "layout": "THREE_COLUMN",
+      "layout": "ONE_COLUMN",
       "title": "How It Works",
       "columns": [
         {
-          "heading": "Smart Surfacing",
-          "bullets": [
-            "Contextual understanding of notes",
-            "Proactive content generation"
-          ]
-        },
-        {
-          "heading": "Augmented Retrieval",
-          "bullets": [
-            "Analyzes notes in relation to each other",
-            "Creates deliverables from inputs"
-          ]
-        },
-        {
           "heading": "",
-          "bullets": []
+          "bullets": [
+            "Contextual understanding through smart surfacing.",
+            "Proactively generates documents and playlists.",
+            "Analyzes notes for enhanced retrieval."
+          ]
         }
       ],
       "footer": "5"
     },
     {
       "layout": "TWO_COLUMN",
-      "title": "Business Model",
+      "title": "Market Opportunity",
       "columns": [
         {
-          "heading": "Revenue Generation",
+          "heading": "Growing Demand",
           "bullets": [
-            "Subscription-based model",
-            "Freemium model for initial users"
+            "Increasing need for productivity tools.",
+            "Significant time savings for businesses.",
+            "Potential for large user base."
           ]
         },
         {
-          "heading": "Partnerships",
+          "heading": "Innovative Features",
           "bullets": [
-            "Collaborations with productivity tools",
-            "Enhance product offerings"
+            "Unique offerings in the market.",
+            "Ability to capture user interest.",
+            "Scalable solutions for diverse needs."
           ]
         }
       ],
@@ -105,75 +115,72 @@
     },
     {
       "layout": "ONE_COLUMN",
-      "title": "Traction",
+      "title": "Business Model",
       "columns": [
         {
           "heading": "",
           "bullets": [
-            "High satisfaction from initial users",
-            "Beta testing shows improved productivity",
-            "Growing community sharing experiences"
+            "Subscription-based model for individuals.",
+            "Enterprise solutions for businesses.",
+            "Partnerships with educational institutions."
           ]
         }
       ],
       "footer": "7"
     },
     {
-      "layout": "TWO_COLUMN",
-      "title": "Go-to-Market Strategy",
+      "layout": "THREE_COLUMN",
+      "title": "Traction",
       "columns": [
         {
-          "heading": "Marketing",
+          "heading": "User Feedback",
           "bullets": [
-            "Targeted campaigns for productivity enthusiasts",
-            "Leverage social media for awareness"
+            "Initial testimonials from users.",
+            "Positive beta testing results.",
+            "High engagement metrics."
           ]
         },
         {
           "heading": "Partnerships",
           "bullets": [
-            "Collaborate with influencers",
-            "Engage in content marketing"
+            "Collaborations established.",
+            "Networking with industry leaders.",
+            "Building a supportive community."
+          ]
+        },
+        {
+          "heading": "Growth Indicators",
+          "bullets": [
+            "Increasing user base.",
+            "Strong market interest.",
+            "Positive growth trajectory."
           ]
         }
       ],
       "footer": "8"
     },
     {
-      "layout": "ONE_COLUMN",
-      "title": "Team",
-      "columns": [
-        {
-          "heading": "",
-          "bullets": [
-            "Founders with AI and productivity expertise",
-            "Advisory board of industry leaders",
-            "Commitment to user feedback integration"
-          ]
-        }
-      ],
-      "footer": "9"
-    },
-    {
       "layout": "TWO_COLUMN",
       "title": "The Ask",
       "columns": [
         {
-          "heading": "Investment",
+          "heading": "Funding Needs",
           "bullets": [
-            "Support product development",
-            "Enhance marketing efforts"
+            "Requirements for further development.",
+            "Investment opportunities.",
+            "Budget allocation for growth."
           ]
         },
         {
-          "heading": "Partnerships",
+          "heading": "Partnership Opportunities",
           "bullets": [
-            "Strategic collaborations",
-            "Requesting audience feedback"
+            "Market expansion collaborations.",
+            "Support in user acquisition.",
+            "Marketing efforts and strategies."
           ]
         }
       ],
-      "footer": "10"
+      "footer": "9"
     }
   ]
 }
