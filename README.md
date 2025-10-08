@@ -8,3 +8,4 @@ A notes app that creates a Google Slides presentation based on your notes. It an
 - Store created slides in your Google Drive
 - Optionally use AI to summarize and organize content
 
+## Must have use-muse organziation account to access
